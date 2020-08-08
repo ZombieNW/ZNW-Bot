@@ -1,5 +1,6 @@
 # ZNW-Bot
 A Discord.js bot made with love <3
+GET IT HERE: https://zombienw.tk/pages/dev/znw-bot/index.html
 
 # ❯ Fun
 -advice , Description: Sends random advice! <br>
