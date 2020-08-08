@@ -17,13 +17,6 @@ ZNW Bot Commands
 -raccoon , Description: Sends a picture of a raccoon! <br>
 -shibe , Description: Sends a picture of doge! <br>
 
-# ❯ Developer
--eval <thing-to-eval., Description: Evaluates given argument. <br>
--list-help , Description: Displays commands in a list. <br>
--reload <command-name>, Description: Reloads code for specified command. <br>
--restart , Description: Restarts bot. <br>
--say <command-name>, Description: Reloads code for specified command. <br>
-
 # ❯ Fun
 -advice , Description: Sends random advice! <br>
 -clap , Description: Puts clap emoji between words. <br>
