@@ -10,12 +10,12 @@ module.exports.help = {
 };
 
 
-module.exports.run = (bot, message, args, prefix) => {
+module.exports.run = (bot, message, log, args, prefix) => {
 
 	if (!bot.config.owners.includes(message.author.id)) return;
 
 	const embed = new Discord.MessageEmbed()
-		.setColor(55555)
+		.setColor(32896)
 		.setAuthor(`${bot.user.username} Commands`, bot.user.displayAvatarURL)
 		.setFooter(`${bot.user.username}`)
 		.setTimestamp();
@@ -29,7 +29,7 @@ module.exports.run = (bot, message, args, prefix) => {
 			else if (category !== "Developer") embed.addField(`❯ ${capitalise}`, dir.map(c => `\`${c.help.name}\``).join(", "));
 		}
 		catch (e) {
-			console.log(e);
+			log.warn(e);
 		}
 	});
 	return message.channel.send(embed);

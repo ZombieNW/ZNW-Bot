@@ -9,7 +9,7 @@ module.exports.help = {
 	category: "Developer",
 };
 
-module.exports.run = (bot, message, args) => {
+module.exports.run = (bot, message, log, args) => {
 
 	//If sent by owner proceed, otherwise return
 	if (!bot.config.owners.includes(message.author.id)) return;
@@ -38,7 +38,7 @@ module.exports.run = (bot, message, args) => {
 			catch (err) {
 				//Command reload fails
 				message.channel.send(`Could not reload: ${args[0].toUpperCase()}\``);
-				return console.log(err.stack || err);
+				return log.warn(err.stack || err);
 			}
 		}
 	});

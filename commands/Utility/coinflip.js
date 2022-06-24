@@ -8,7 +8,7 @@ module.exports.help = {
   aliases: ["coin"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
     {
       "title": "Coinflip!",
       "description": "Heads!", //Finds Time From Message Creation To Current Time To Find Lag In MS
-      "color": 55555
+      "color": 32896
     };
   message.channel.send({ embed: coinEmbed }); //Send pingEmbed embed
   }
@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
     {
       "title": "Coinflip!",
       "description": "Tails!", //Finds Time From Message Creation To Current Time To Find Lag In MS
-      "color": 55555
+      "color": 32896
     };
   message.channel.send({ embed: coinEmbed }); //Send pingEmbed embed
   }

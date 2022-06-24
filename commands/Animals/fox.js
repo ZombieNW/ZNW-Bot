@@ -2,17 +2,16 @@ const Discord = require("discord.js");
 const randomPuppy = require('random-puppy');
 
 module.exports.help = {
-  name: "meme",
-  description: "Sends memes from a variety of subreddits.",
+  name: "fox",
+  description: "Sends a picture of a fox!",
   usage: "",
-  category: "Fun",
-  aliases: ["m"]
+  category: "Animals",
+  aliases: [""]
 };
 
 module.exports.run = async (bot, message, log, args) => {
 
-  const subReddits = ["dankmeme", "meme", "memes", "me_irl"]
-            const random = subReddits[Math.floor(Math.random() * subReddits.length)];
+            const random = "Foxes"
             const img = await randomPuppy(random);
             const memeEmbed = new Discord.MessageEmbed()
             .setColor(32896)

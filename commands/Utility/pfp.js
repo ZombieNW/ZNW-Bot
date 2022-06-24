@@ -8,7 +8,7 @@ module.exports.help = {
   aliases: ["profile","profile-picture"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
   if(!message.mentions.users.first()){ //If No Argument
     message.channel.send({
         embed: {
@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
             image: {
                 url: message.author.displayAvatarURL()
             },
-            color: 55555
+            color: 32896
         }
     })
   }
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
               image: {
                   url: user.avatarURL()
               },
-              color: 55555
+              color: 32896
           }
       })
   }

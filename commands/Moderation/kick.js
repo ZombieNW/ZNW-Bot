@@ -8,16 +8,16 @@ module.exports.help = {
   aliases: ["softban"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
     if (message.member.hasPermission('KICK_MEMBERS')) { //If Sender Can Mannage Messages
         let kickMember = message.mentions.members.first() 
-        if(!kickMember) return message.reply("Silly, you must provide a user to kick.")
+        if(!kickMember) return message.reply(`Silly, you need to provide the valid arguments. (${prefix}help kick)`);
 
         let reason = args.slice(1).join(" ")
         if(!reason) reason = "Unspecified"
 
         kickMember.send(`You have been kicked from **${message.guild.name}**, Reason: **${reason}**`).then(() => 
-        kickMember.kick("Reason")).catch(err => console.log(err))
+        kickMember.kick("Reason")).catch(err => log.warn(err))
 
         message.channel.send(`**${kickMember.user.tag}** has been kicked`)
     }

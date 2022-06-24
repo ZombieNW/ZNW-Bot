@@ -8,16 +8,16 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
     if (message.member.hasPermission('BAN_MEMBERS')) { //If Sender Can Mannage Members
         let banMember = message.mentions.members.first() 
-        if(!banMember) return message.reply("Silly, you must provide a member to ban.")
+        if(!banMember) return message.reply(`Silly, you need to provide the valid arguments. (${prefix}help ban)`);
 
         let reason = args.slice(1).join(" ")
         if(!reason) reason = "Unspecified"
 
         banMember.send(`You have been banned from **${message.guild.name}**, Reason: **${reason}**`).then(() => 
-        banMember.ban("Reason")).catch(err => console.log(err))
+        banMember.ban("Reason")).catch(err => log.warn(err))
 
         message.channel.send(`**${banMember.user.tag}** has been banned`)
     }

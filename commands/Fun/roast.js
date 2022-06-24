@@ -9,7 +9,7 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
 
   fetch('https://evilinsult.com/generate_insult.php?lang=en&type=json')
             .then(res => res.json())
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
                     author: {
                         name: "Roast",
                     },
-                    color: 55555
+                    color: 32896
                 }
             }));
 

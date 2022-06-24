@@ -9,7 +9,7 @@ module.exports.help = {
 	category: "Developer",
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
 
 	//If sent by owner proceed, otherwise return
 	if (!bot.config.owners.includes(message.author.id)) return;

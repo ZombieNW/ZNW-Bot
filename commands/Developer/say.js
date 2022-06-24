@@ -8,7 +8,7 @@ module.exports.help = {
 	category: "Developer",
 };
 
-module.exports.run = (bot, message, args) => {
+module.exports.run = (bot, message, log, args) => {
 
 	//Organises message and checks if it's valid.
 	if (!bot.config.owners.includes(message.author.id)) return;

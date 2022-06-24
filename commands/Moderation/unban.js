@@ -8,10 +8,10 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
     if (message.member.hasPermission('BAN_MEMBERS')) { //If Sender Can Mannage Members
         let user = args[0];
-        if (!user) return message.reply('Silly, you must provide an ID to unban!').catch(console.error);
+        if (!user) return message.reply(`Silly, you need to provide the valid arguments. (${prefix}help unban)`).catch(console.error);
         message.guild.members.unban(user);
         message.channel.send(`User With ID: **${user}** has been unbanned`)
     }

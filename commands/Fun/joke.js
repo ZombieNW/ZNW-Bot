@@ -9,7 +9,7 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
 
   //Uses discord-joke npm package to fecth a joke and send it.
   giveMeAJoke.getRandomDadJoke (function(joke) {
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
             author: {
                 name: "Joke",
             },
-            color: 55555
+            color: 32896
         }
     });
 });

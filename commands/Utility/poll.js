@@ -8,7 +8,7 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
      if (!args[0]) {
       message.reply("Silly, you need to give an argument.");
      return;
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
                   "inline": true
                 }
               ],
-            "color": 55555
+            "color": 32896
             
         };
     message.channel.send({ embed: pollEmbed }).then((messageReaction) => {

@@ -8,9 +8,9 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
     if (!args[0]) {
-        message.reply("Silly, you need to give an argument.");
+        message.reply(`Silly, you need to provide the valid arguments. (${prefix}help warn)`);
         return;
     }
     if (message.member.hasPermission('MANAGE_ROLES')) {
@@ -18,8 +18,6 @@ module.exports.run = async (bot, message, args) => {
             
         function warn(){
             let role = message.guild.roles.cache.find(r => r.name === "Warned");
-
-            console.log(args);
             // Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
             
             let member = message.mentions.members.first();
@@ -38,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
             {
                 "title": "Warn",
                 "description": `${member.user.tag} Has Been Warned For: ${reason}`, //Finds Time From Message Creation To Current Time To Find Lag In MS
-                "color": 55555
+                "color": 32896
             };
             message.channel.send({ embed: warnEmbed }); //Send pingEmbed embed
             return;
@@ -61,7 +59,7 @@ module.exports.run = async (bot, message, args) => {
             },
             reason: 'Bad People',
           })
-            .then(console.log)
+            .then(log.warn)
             .catch(console.error);
             if(message.member.roles.cache.some(r=>["Warned"].includes(r.name)) ) {
                 message.reply("That user has already be warned, consider punishing them?");

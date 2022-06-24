@@ -9,7 +9,7 @@ module.exports.help = {
   aliases: ["wyr"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
   var randomItem = wyrJson[Math.floor(Math.random()*wyrJson.length)];
 
   message.channel.send({
@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         author: {
             name: "Would You Rather?",
         },
-        color: 55555
+        color: 32896
     }
 });
 };

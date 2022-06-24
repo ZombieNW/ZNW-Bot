@@ -9,7 +9,7 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
 
   let Query = args.join(" "); 
 
@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
                 if(!result) return message.reply("No results found!")
 
                 let urbanEmbed = new Discord.MessageEmbed()
-                .setColor(55555)
+                .setColor(32896)
                 .setTitle("Urban Dictionary For: " + result.word)
                 .setDescription("||" + result.definition + "|| (Click For Definition)")
                 .setFooter(`Author: ${result.author}`);

@@ -8,7 +8,7 @@ module.exports.help = {
   aliases: ["roll"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
 
   if(isNaN(args[0])){ //If args IS NOT a number
     return message.reply("Silly, your arguement needs to be a number!");
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     {
       "title": "Dice!",
       "description": result, //Finds Time From Message Creation To Current Time To Find Lag In MS
-      "color": 55555
+      "color": 32896
     };
   message.channel.send({ embed: diceEmbed }); //Send pingEmbed embed
 };

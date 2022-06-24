@@ -9,10 +9,10 @@ module.exports.help = {
   aliases: [""]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
   pixakey = bot.config.pixakey;
 
-  if(!args[0]) return message.reply("Silly, you must provide an argument!");
+  if(!args[0]) return message.reply(`Silly, you need to provide the valid arguments. (${prefix}help pixabay)`);
   
     pixabay.searchImages(pixakey, args).then((r) => {
       try{

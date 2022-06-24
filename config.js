@@ -1,6 +1,6 @@
 module.exports = {
-	owners: ["525857847507156992"],
-	token: process.env.BOT_TOKEN,
-	pixakey: process.env.PIXABAY_TOKEN,
-	id: process.env.BOT_ID
+	owners: ["BOT OWNER DISCORD ID"],
+	token: "BOT TOKEN HERE",
+	pixakey: "PIXABAY API TOKEN HERE",
+	id: "BOT ID HERE"
 };

@@ -10,7 +10,7 @@ module.exports.help = {
   aliases: ["owo"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
   var argument = args.join(" ");
   let owo = await neko.sfw.OwOify({text: argument});
   message.channel.send({
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
           author: {
               name: "OwOify",
           },
-          color: 55555
+          color: 32896
       }
   });
 };

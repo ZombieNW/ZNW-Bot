@@ -9,7 +9,7 @@ module.exports.help = {
   aliases: ["tip"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
         //Fetches slip.advice from url and sends it in an embed.
         fetch('https://api.adviceslip.com/advice')
         .then(res => res.json())
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
                 author: {
                     name: "Advice",
                 },
-                color: 55555
+                color: 32896
             }
         }));
 };

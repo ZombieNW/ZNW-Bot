@@ -10,7 +10,7 @@ module.exports.help = {
   aliases: ["boop"]
 };
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, log, args) => {
 
   let reciever = message.mentions.members.first()
   if(!reciever) return message.reply(`Silly, you must provide a valid user!`)
@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
         }, 
         image: {
             url: neko.url
-        },color: 55555
+        },color: 32896
     }
 })});
 
